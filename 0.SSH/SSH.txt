@@ -1,0 +1,32 @@
+
+
+
+! ===================== config Routeur  =======================
+en
+configure terminal
+hostname ALGER
+int g0/0
+ip address 192.168.1.254 255.255.255.0
+no shutdown
+exit
+
+! =======config password global =================================
+enable password samir
+!========config ssh=============================================
+ip domaine-name samir.com
+crypto key generate rsa 
+1024
+aaa new-model
+ip ssh authentication-retries 5
+ip ssh time-out 10
+username samir password samirssh
+line vty 0 4
+transport input ssh
+do wr
+exit 
+exit
+
+
+
+
+
