@@ -13,7 +13,7 @@ exit
 ! =======config password global =================================
 enable password samir
 !========config ssh=============================================
-ip domaine-name samir.com
+ip domain-name samir.com
 crypto key generate rsa 
 1024
 aaa new-model
