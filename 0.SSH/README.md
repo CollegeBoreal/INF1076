@@ -15,3 +15,5 @@ dans notre cas:
 >password:samirssh
 >enable password :samir
 ```
+
+![alt tag](https://github.com/setrar/INF1076/blob/master/0.SSH/SSH.png)
