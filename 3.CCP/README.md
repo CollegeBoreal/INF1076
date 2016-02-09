@@ -1,5 +1,6 @@
 # INF1076
-Configurer CCP en allumant le service HTTP
+
+## Configurer CCP en allumant le service HTTP
 
 ```
 Router(config)# ip http server
@@ -13,3 +14,11 @@ Router(config-line)# transport input telnet
 Router(config-line)# transport input telnet ssh
 Router(config-line)# exit
 ```
+
+## CCP (Cisco Configuration Professional) 2.5
+- Installation de CCP sur Windows 7 et 10
+- Configuration du Routeur
+- Démo de CCP
+- Profils Utilisateurs
+- Création de modèles (templates)
+- Autosecure et LockDown
