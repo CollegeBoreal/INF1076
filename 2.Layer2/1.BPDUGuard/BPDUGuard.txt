@@ -2,7 +2,10 @@
 int range f0/1-15
 switchport mode access
 
-! Desactiver STP aux ports
+! Desactiver STP aux ports donnes pour un access instantane
 spanning-tree portfast
+
+! Empecher les trames BPDU d'acceder aux ports donnes
+! Desactiver STP aux ports
 spanning-tree bpduguard enable
 
