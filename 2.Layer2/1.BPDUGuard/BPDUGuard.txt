@@ -1,0 +1,8 @@
+! Assigner les ports F0/1-15  en mode access
+int range f0/1-15
+switchport mode access
+
+! Desactiver STP aux ports
+spanning-tree portfast
+spanning-tree bpduguard enable
+
