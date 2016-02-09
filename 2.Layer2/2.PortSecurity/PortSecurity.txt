@@ -1,0 +1,8 @@
+! Assigner les ports F0/1-15 au VLAN 100
+int range f0/1-15
+switchport mode access
+
+! Activer un protection minimale aux ports d'acces
+switchport port-security mac sticky
+switchport port-security max 1
+switchport port-security vio shut
