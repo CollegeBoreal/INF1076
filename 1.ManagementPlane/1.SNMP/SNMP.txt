@@ -1,0 +1,26 @@
+!=== config switch
+
+enable
+conf t
+
+host agent1
+enable password cisco
+enable secret boreal
+line vty 0 4
+password boreal
+login
+exit
+
+interface vlan 1
+ip address 192.168.1.10 255.255.255.0
+no shutdown
+exit
+
+snmp-server community samir RO
+
+ip default-gateway 192.168.1.1
+exit
+do wr
+exit
+exit
+
