@@ -1,0 +1,6 @@
+
+
+! En mode privilege
+conf t
+ntp update-calendar 
+ntp server 192.168.1.2
