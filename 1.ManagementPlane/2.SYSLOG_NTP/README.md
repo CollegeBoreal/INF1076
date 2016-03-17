@@ -13,9 +13,11 @@ Le service de journalisation du protocole Syslog assume trois fonctions principa
 - La capacité à spécifier les destinations des messages Syslog capturés
 - 
 
-# Configuration:
+## Configuration:
 
-![alt tag](https://github.com/CollegeBoreal/INF1076-16H/blob/master/1.ManagementPlane/1.SNMP/SNMP.png)
+### NTP Packet Tracer:
+
+![alt tag](https://github.com/CollegeBoreal/INF1076-16H/blob/master/1.ManagementPlane/2.SYSLOG_NTP/NTP.png)
 
 ### Observation: 
 packet tracer ne permet pas de personnaliser le niveau de controle afin de limiter les message a un niveau souhaité , je vais essayer de faire le meme lab sur gns3 qui permet cela.
