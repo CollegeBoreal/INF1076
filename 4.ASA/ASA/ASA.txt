@@ -1,0 +1,138 @@
+! ASA CONFIGURATION:
+
+interface GigabitEthernet0
+ nameif outside
+ ip address 172.16.45.4 255.255.255.0
+ no shut
+
+interface GigabitEthernet1
+ nameif inside
+ ip address 192.168.11.1 255.255.255.0
+ no shut
+
+route outside 10.10.0.0 255.255.0.0 172.16.45.5
+route inside 192.168.12.0 255.255.255.0 192.168.11.2
+
+object network INSIDE_HOSTS
+   subnet 192.168.0.0 255.255.0.0
+   nat (inside,outside) dynamic interface
+
+access-list outside_in extended permit icmp any any echo
+access-list outside_in extended permit icmp any any echo-reply
+access-list outside_in extended permit icmp any any unreachable
+access-list outside_in extended permit icmp any any source-quench
+access-list outside_in extended permit icmp any any time-exceed
+
+access-group outside_in in interface outside
+
+#Configure isakmp policy
+crypto ikev2 policy 10
+encryption aes-256 aes-192 aes
+integrity sha
+group 2
+prf sha
+lifetime seconds 86400
+
+#Configure ipsec policy
+crypto ipsec ikev2 ipsec-proposal AES256-192-128-PROPOSAL
+protocol esp encryption aes-256 aes-192 aes
+protocol esp integrity sha-1
+
+#Enable isakmp
+crypto ikev2 enable outside
+
+#Configure Tunnel group
+tunnel-group 172.16.45.5 type ipsec-l2l
+tunnel-group 172.16.45.5 ipsec-attributes
+ikev2 remote-authentication pre-shared-key cisco
+ikev2 local-authentication pre-shared-key cisco
+
+#Configure crypto map
+access-list VPN-TRAFFIC extended permit ip 192.168.0.0 255.255.0.0 10.10.0.0 255.255.0.0
+crypto map ASA-R5 10 match address VPN-TRAFFIC
+crypto map ASA-R5 10 set peer 172.16.45.5
+crypto map ASA-R5 10 set ikev2 ipsec-proposal AES256-192-128-PROPOSAL
+crypto map ASA-R5 interface outsideROUTER R1:
+
+hostname R1
+
+crypto ikev2 proposal AES256-192-128-PROPOSAL 
+ encryption aes-cbc-256 aes-cbc-192 aes-cbc-128
+ integrity sha1
+ group 2
+!
+crypto ikev2 policy IKEv2-Policy 
+ proposal AES256-192-128-PROPOSAL
+!
+crypto ikev2 keyring VPN-KEYS
+ peer ASA
+  address 172.16.45.4
+  pre-shared-key local cisco
+  pre-shared-key remote cisco
+ !
+!
+!
+crypto ikev2 profile ASA
+ match identity remote address 172.16.45.4 255.255.255.255 
+ identity local address 172.16.45.5
+ authentication remote pre-share
+ authentication local pre-share
+ keyring local VPN-KEYS
+!
+crypto ipsec transform-set ESP-AES256-SHA esp-aes 256 esp-sha-hmac 
+ mode tunnel
+!
+crypto map R5-ASA 10 ipsec-isakmp 
+ set peer 172.16.45.4
+ set transform-set ESP-AES256-SHA 
+ set ikev2-profile ASA
+ match address VPN-TRAFFIC
+!
+!
+interface FastEthernet0/0
+ ip address 172.16.45.5 255.255.255.0
+ ip nat outside
+ speed auto
+ duplex auto
+ crypto map R5-ASA
+!
+interface FastEthernet0/1
+ ip address 10.10.13.1 255.255.255.0
+ ip nat inside
+ speed auto
+ duplex auto
+!
+ip nat inside source list 103 interface FastEthernet0/0 overload
+
+ip route 10.10.34.0 255.255.255.0 10.10.13.3
+ip route 192.168.0.0 255.255.0.0 172.16.45.4
+!
+ip access-list extended VPN-TRAFFIC
+ permit ip 10.10.0.0 0.0.255.255 192.168.0.0 0.0.255.255
+!
+access-list 103 permit ip 10.10.0.0 0.0.255.255 any
+!hostname R2
+!
+interface FastEthernet0/0
+ ip address 192.168.11.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ ip address 192.168.12.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+ip route 0.0.0.0 0.0.0.0 192.168.11.1
+hostname R3
+interface FastEthernet0/0
+ ip address 10.10.13.3 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ ip address 10.10.34.3 255.255.255.0
+ duplex auto
+ speed auto
+!
+ip route 0.0.0.0 0.0.0.0 10.10.13.1
