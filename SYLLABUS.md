@@ -111,4 +111,36 @@
 5.5 Firewall features on the Cisco Adaptive Security Appliance (ASA) 9.x
 5.5.a Configure ASA access management
 5.5.b Configure security access policies
+5.5.c Configure Cisco ASA interface security levels
+5.5.d Configure default Cisco Modular Policy Framework (MPF)
+5.5.e Describe modes of deployment (routed firewall, transparent firewall)
+5.5.f Describe methods of implementing high availability
+5.5.g Describe security contexts
+5.5.h Describe firewall services
+```
+## 9% 6.0 IPS
+```
+6.1 Describe IPS deployment considerations
+6.1.a Network-based IPS vs. host-based IPS
+6.1.b Modes of deployment (inline, promiscuous - SPAN, tap)
+6.1.c Placement (positioning of the IPS within the network)
+6.1.d False positives, false negatives, true positives, true negatives
+6.2 Describe IPS technologies
+6.2.a Rules/signatures
+6.2.b Detection/signature engines
+6.2.c Trigger actions/responses (drop, reset, block, alert, monitor/log, shun)
+6.2.d Blacklist (static and dynamic)
+```
+## 12% 7.0 Content and Endpoint Security
+```
+7.1 Describe mitigation technology for email-based threats
+7.1.a SPAM filtering, anti-malware filtering, DLP, blacklisting, email encryption
+7.2 Describe mitigation technology for web-based threats
+7.2.a Local and cloud-based web proxies
+7.2.b Blacklisting, URL filtering, malware scanning, URL categorization, web
+application filtering, TLS/SSL decryption
+7.3 Describe mitigation technology for endpoint threats
+7.3.a Anti-virus/anti-malware
+7.3.b Personal firewall/HIPS
+7.3.c Hardware/software encryption of local data
 ```
