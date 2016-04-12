@@ -1,6 +1,7 @@
 # CCNA Security 210-260
 
 ## 12% 1.0 Security Concepts
+```
 1.1 Common security principles
 1.1.a Describe confidentiality, integrity, availability (CIA)
 1.1.b Describe SIEM technology
@@ -22,7 +23,7 @@
 1.4.c Data center
 1.4.d Small office/home office (SOHO)
 1.4.e Network security for a virtual environment
-
+```
 ## 14% 2.0 Secure Access
 2.1 Secure management
 2.1.a Compare in-band and out-of band
