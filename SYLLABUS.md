@@ -1,6 +1,6 @@
 # CCNA Security 210-260
 
-## 12% 1.0 Security Concepts
+## 1.0 Security Concepts 12% 
 ```
 1.1 Common security principles
 1.1.a Describe confidentiality, integrity, availability (CIA)
@@ -24,7 +24,7 @@
 1.4.d Small office/home office (SOHO)
 1.4.e Network security for a virtual environment
 ```
-## 14% 2.0 Secure Access
+## 2.0 Secure Access 14% 
 ```
 2.1 Secure management
 2.1.a Compare in-band and out-of band
@@ -45,7 +45,7 @@
 2.4.b Describe the function of mobile device management (MDM)
 ```
 
-## 17% 3.0 VPN
+## 3.0 VPN 17% 
 ```
 3.1 VPN concepts
 3.1.a Describe IPsec protocols and delivery modes (IKE, ESP, AH, tunnel mode, transport mode)
@@ -61,7 +61,7 @@
 3.3.b Verify an IPsec site-to-site VPN
 ```
 
-## 18% 4.0 Secure Routing and Switching
+## 4.0 Secure Routing and Switching 18% 
 ```
 4.1 Security on Cisco routers
 4.1.a Configure multiple privilege levels
@@ -90,7 +90,7 @@
 4.6.b Describe the security implications of a native VLAN
 ```
 
-## 18% 5.0 Cisco Firewall Technologies
+## 5.0 Cisco Firewall Technologies 18% 
 ```
 5.1 Describe operational strengths and weaknesses of the different firewall technologies
 5.1.a Proxy firewalls
@@ -118,7 +118,7 @@
 5.5.g Describe security contexts
 5.5.h Describe firewall services
 ```
-## 9% 6.0 IPS
+## 6.0 IPS 9% 
 ```
 6.1 Describe IPS deployment considerations
 6.1.a Network-based IPS vs. host-based IPS
@@ -131,7 +131,7 @@
 6.2.c Trigger actions/responses (drop, reset, block, alert, monitor/log, shun)
 6.2.d Blacklist (static and dynamic)
 ```
-## 12% 7.0 Content and Endpoint Security
+## 7.0 Content and Endpoint Security 12% 
 ```
 7.1 Describe mitigation technology for email-based threats
 7.1.a SPAM filtering, anti-malware filtering, DLP, blacklisting, email encryption
