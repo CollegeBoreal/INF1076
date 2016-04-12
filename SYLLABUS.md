@@ -137,8 +137,7 @@
 7.1.a SPAM filtering, anti-malware filtering, DLP, blacklisting, email encryption
 7.2 Describe mitigation technology for web-based threats
 7.2.a Local and cloud-based web proxies
-7.2.b Blacklisting, URL filtering, malware scanning, URL categorization, web
-application filtering, TLS/SSL decryption
+7.2.b Blacklisting, URL filtering, malware scanning, URL categorization, web application filtering, TLS/SSL decryption
 7.3 Describe mitigation technology for endpoint threats
 7.3.a Anti-virus/anti-malware
 7.3.b Personal firewall/HIPS
