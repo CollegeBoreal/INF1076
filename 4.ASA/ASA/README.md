@@ -4,6 +4,10 @@
 
 https://gns3.com/support/docs/importing-asa-images-in-gns3-v-2
 
+# ASA Setup in GNS3 with ASDM
+
+https://gns3.com/discussions/asa-setup-in-gns3-with-asdm
+
 ## Laboratoire
 
 https://www.gns3.com/discussions/vpn-site-to-site-between-asa-and
